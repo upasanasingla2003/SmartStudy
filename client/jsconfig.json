@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      "target": "ES2020",
+      "lib": ["ES2020", "DOM"],
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "baseUrl": "./",
+      "paths": {
+        "@app/*": ["src/app/*"],
+        "@app": ["src/app"],
+        "@common/*": ["src/common/*"],
+        "@common": ["src/common"],
+        "@components/*": ["src/components/*"],
+        "@components": ["src/components"],
+        "@pages/*": ["src/pages/*"],
+        "@pages": ["src/pages"],
+        "@redux/*": ["src/redux/*"],
+        "@redux": ["src/redux"],
+        "@routes/*": ["src/routes/*"],
+        "@routes": ["src/routes"],
+        "@utils/*": ["src/utils/*"],
+        "@utils": ["src/utils"]
+      }
+    },
+    "include": ["src"]
+}
