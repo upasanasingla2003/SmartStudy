@@ -13,7 +13,7 @@ const MongoStore = require('connect-mongo');
 const cors = require('cors')
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://smartstudy-7t68.onrender.com',
     credentials: true // Allow cookies/sessions if you're using them
   }));
 
