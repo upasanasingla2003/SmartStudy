@@ -17,10 +17,7 @@ app.use(cors({
     credentials: true // Allow cookies/sessions if you're using them
   }));
 
-mongoose.connect('mongodb+srv://smart-study-user:@Designing123@cluster0.q5ekzt0.mongodb.net/', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect('mongodb+srv://study-smart-user:6XpQloc3Y9IOeMEz@cluster0.q5ekzt0.mongodb.net/')
 .then(()=>{
     console.log('DB connected')
 })
