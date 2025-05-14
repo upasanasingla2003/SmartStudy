@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 
 let store = MongoStore.create({
     secret:'secret',
-    mongoUrl: 'mongodb://127.0.0.1:27017/revision-scheduler',
+    mongoUrl: 'mongodb+srv://study-smart-user:6XpQloc3Y9IOeMEz@cluster0.q5ekzt0.mongodb.net/',
     touchAfter:24*60*60
 })
 const sessionConfig = {
