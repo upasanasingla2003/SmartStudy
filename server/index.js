@@ -17,7 +17,10 @@ app.use(cors({
     credentials: true // Allow cookies/sessions if you're using them
   }));
 
-mongoose.connect('mongodb://127.0.0.1:27017/revision-scheduler')
+mongoose.connect('mongodb+srv://smart-study-user:@Designing123@cluster0.q5ekzt0.mongodb.net/', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
 .then(()=>{
     console.log('DB connected')
 })
