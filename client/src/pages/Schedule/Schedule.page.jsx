@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Box,
   Typography,
@@ -30,6 +31,7 @@ export const Schedule = () => {
   const { schedules, scheduleIsLoading } = useSelector((state) => state.schedule);
   const { revisionIsLoading, revisions } = useSelector((state) => state.revision);
 
+  const navigate = useNavigate()
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const date = queryParams.get('date');
@@ -59,7 +61,7 @@ export const Schedule = () => {
         startTime: startTime?.format('HH:mm'),
         endTime: endTime?.format('HH:mm')
       });
-      if (response.status === 200) window.location.reload();
+      if (response.status === 200) navigate(`/schedule?date=${date}`);
     } finally {
       handleRevisionClose();
     }
@@ -75,7 +77,7 @@ export const Schedule = () => {
         endTime: endTime?.format('HH:mm'),
         createRevision
       });
-      if (response.status === 200) window.location.reload();
+      if (response.status === 200) navigate(`/schedule?date=${date}`);
     } finally {
       handleLessonClose();
     }
