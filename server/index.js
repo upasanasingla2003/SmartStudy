@@ -29,7 +29,7 @@ mongoose.connect('mongodb+srv://study-smart-user:6XpQloc3Y9IOeMEz@cluster0.q5ekz
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(express.static(path.join(__dirname, 'client')));
 
 let store = MongoStore.create({
     secret:'secret',
@@ -78,7 +78,7 @@ app.use(authRoutes);
 app.use(scheduleRoutes);
 app.use(revisionRoutes)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html')); // Adjust path as per your setup
+  res.sendFile(path.join(__dirname, 'client', 'index.html')); // Adjust path as per your setup
 });
 app.get('/', (req, res) => res.send('Hello World'))
 
