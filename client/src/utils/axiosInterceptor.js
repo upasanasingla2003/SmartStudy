@@ -19,7 +19,7 @@ const STATUS_CODES = {
 };
 
 export const axiosInstance = axios.create({
-  baseURL: 'https://smartstudy-backend-jfjw.onrender.com/',
+  baseURL: 'http://localhost:8080/',
   withCredentials: true,
   timeout: 5000,
   headers: {

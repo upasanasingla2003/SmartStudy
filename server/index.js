@@ -16,7 +16,7 @@ const path = require('path')
 
 app.set('trust proxy', 1);
 app.use(cors({
-    origin: 'https://smartstudy-7t68.onrender.com',
+    origin: 'http://localhost:3000/',
     credentials: true // Allow cookies/sessions if you're using them
   }));
 

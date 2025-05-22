@@ -61,7 +61,10 @@ export const Schedule = () => {
         startTime: startTime?.format('HH:mm'),
         endTime: endTime?.format('HH:mm')
       });
-      if (response.status === 200) dispatch(getRevision({ date }));
+      if (response.status === 200) {
+        dispatch(getRevision({ date }));
+        dispatch(getSchedule({ date }));
+      }
     } finally {
       handleRevisionClose();
     }
