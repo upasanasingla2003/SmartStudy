@@ -12,6 +12,7 @@ const LocalStrategy =  require('passport-local');
 const User = require('./models/User');
 const MongoStore = require('connect-mongo');
 const cors = require('cors')
+const path = require('path')
 
 app.set('trust proxy', 1);
 app.use(cors({
