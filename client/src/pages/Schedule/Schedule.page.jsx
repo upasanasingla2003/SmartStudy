@@ -61,7 +61,7 @@ export const Schedule = () => {
         startTime: startTime?.format('HH:mm'),
         endTime: endTime?.format('HH:mm')
       });
-      if (response.status === 200) navigate(`/schedule?date=${date}`);
+      if (response.status === 200) dispatch(getRevision({ date }));
     } finally {
       handleRevisionClose();
     }
@@ -77,7 +77,7 @@ export const Schedule = () => {
         endTime: endTime?.format('HH:mm'),
         createRevision
       });
-      if (response.status === 200) navigate(`/schedule?date=${date}`);
+      if (response.status === 200) dispatch(getSchedule({ date }));
     } finally {
       handleLessonClose();
     }
