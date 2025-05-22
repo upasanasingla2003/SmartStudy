@@ -77,7 +77,9 @@ const revisionRoutes = require('./routes/revision');
 app.use(authRoutes);
 app.use(scheduleRoutes);
 app.use(revisionRoutes)
-
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html')); // Adjust path as per your setup
+});
 app.get('/', (req, res) => res.send('Hello World'))
 
 app.listen(8080, () => {
