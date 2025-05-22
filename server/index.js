@@ -2,7 +2,6 @@ if(process.env.NODE_ENV !== 'production'){
     require('dotenv').config();
 }
 
-app.set('trust proxy', 1);
 
 const express = require('express')
 const app = express()
@@ -14,6 +13,7 @@ const User = require('./models/User');
 const MongoStore = require('connect-mongo');
 const cors = require('cors')
 
+app.set('trust proxy', 1);
 app.use(cors({
     origin: 'https://smartstudy-7t68.onrender.com',
     credentials: true // Allow cookies/sessions if you're using them
