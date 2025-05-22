@@ -2,6 +2,8 @@ if(process.env.NODE_ENV !== 'production'){
     require('dotenv').config();
 }
 
+app.set('trust proxy', 1);
+
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
@@ -42,6 +44,8 @@ const sessionConfig = {
     saveUninitialized: true,
     cookie:{
         httpOnly:true,
+        secure: true,
+        sameSite: 'lax',
         expires:Date.now() + 1000*60*60*24*7,
         maxAge: 1000*60*60*24*7
     }
