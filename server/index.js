@@ -37,19 +37,21 @@ let store = MongoStore.create({
     touchAfter:24*60*60
 })
 const sessionConfig = {
-    store:store,
-    name:'upasana',
+    store: store,
+    name: 'upasana',
     secret: 'secret',
     resave: false,
-    saveUninitialized: true,
-    cookie:{
-        httpOnly:true,
-        secure: true,
-        sameSite: 'lax',
-        expires:Date.now() + 1000*60*60*24*7,
-        maxAge: 1000*60*60*24*7
+    saveUninitialized: false,
+    cookie: {
+        httpOnly: true,
+        secure: true, // true in production only
+        sameSite: 'none',
+        maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
     }
 }
+
+app.use(session(sessionConfig));
+
 
 app.use(session(sessionConfig));
 
